@@ -1,0 +1,17 @@
+.top-border{
+    border-top: 4px solid #000 ;
+}
+.content{
+    min-height:600px;
+}
+.heading-font{
+   font-family: 'Brush Script MT', cursive;
+  }
+  
+.objects-scroll{
+    overflow-y: scroll;
+    max-height: 300px;
+    background:#787acb
+}
+  
+  

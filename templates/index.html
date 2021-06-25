@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h3 class="text-dark font-weight-bolder text-center p-5  pb-4" >VIDEO OBJECT DETECTION</h3>
+    <div class="container border-dark">
+        <div class="container p-3" style="background:#78374a">
+            <div class="container pb-2">
+                <h4 class="text-white">Upload  video</h4>
+            </div>
+            <form class="d-flex" method="POST"  enctype="multipart/form-data"> 
+                <input type="file" class="form-control form-control-sm w-25 rounded-0" name="videoupload">
+                <button type="submit" style="background:#ead5f2; padding-left:20px; padding-right:20px; margin-left:20px" class="btn btn-sm text-dark rounded-0">
+                Sumbit Video</button> 
+           </form>
+        </div>
+            
+        <div style="background:#e6d3dd">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="p-5 pb-1">
+                        <h5  class="pb-1 pt-5 text-uppercase">Search  object</h5>
+                    </div>
+                    <form class="p-4 d-flex" method="POST" action="/search" >
+                        <input type="text" class="form-control form-control-sm rounded-0" name="search_parameter" placeholder="Detect objects in the video ">
+                        <button type="submit" style="background:#78374a; padding-left:20px; padding-right:20px; margin-left:20px" class="btn btn-sm text-white rounded-0">Search</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="rounded-0 objects-scroll " style="max-height:200px;">
+                         <ul class="list-unstyled">
+                             {% for obj in obj_names %}
+                            <li>{{obj}}</li>
+                           {%endfor%}  
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+    </div>
+             
+</div>
+    
+{% endblock %}
+
